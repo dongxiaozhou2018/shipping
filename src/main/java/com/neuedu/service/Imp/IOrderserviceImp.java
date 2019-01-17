@@ -813,7 +813,7 @@ public class IOrderserviceImp implements IOrderservice {
                 .setTimeoutExpress(timeoutExpress)
                 .setNotifyUrl("http://39.105.230.209:8080/order/alipay_callback.do")//支付宝服务器主动通知商户服务器里指定的页面http路径,根据需要设置
                 .setGoodsDetailList(goodsDetailList);
- 
+
         AlipayF2FPrecreateResult result = tradeService.tradePrecreate(builder);
         switch (result.getTradeStatus()) {
             case SUCCESS:
