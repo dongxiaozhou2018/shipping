@@ -27,7 +27,7 @@ public class Pictureupload {
     @RequestMapping(value = "/upload",method = RequestMethod.POST )
     @ResponseBody
     public ServerResponse upload1(@RequestParam(value = "upload_file",required = false)MultipartFile file){
-        String path = "F:\\photo";
+        String path = "/";
         return iProductservice.upload(file,path);
     }
 

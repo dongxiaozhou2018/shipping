@@ -811,7 +811,7 @@ public class IOrderserviceImp implements IOrderservice {
                 .setUndiscountableAmount(undiscountableAmount).setSellerId(sellerId).setBody(body)
                 .setOperatorId(operatorId).setStoreId(storeId).setExtendParams(extendParams)
                 .setTimeoutExpress(timeoutExpress)
-                .setNotifyUrl("http://47.93.245.212:8080/order/alipay_callback.do")//支付宝服务器主动通知商户服务器里指定的页面http路径,根据需要设置
+                .setNotifyUrl("http://39.105.230.209:8080/order/alipay_callback.do")//支付宝服务器主动通知商户服务器里指定的页面http路径,根据需要设置
                 .setGoodsDetailList(goodsDetailList);
 
         AlipayF2FPrecreateResult result = tradeService.tradePrecreate(builder);
@@ -823,7 +823,7 @@ public class IOrderserviceImp implements IOrderservice {
                 dumpResponse(response);
 
                 // 需要修改为运行机器上的路径
-                String filePath = String.format("/ftpfile/123/qr-%s.png",
+                String filePath = String.format("/ftpfile/img/qr-%s.png",
                         response.getOutTradeNo());
                 log.info("filePath:" + filePath);
                 ZxingUtils.getQRCodeImge(response.getQrCode(), 256, filePath);
